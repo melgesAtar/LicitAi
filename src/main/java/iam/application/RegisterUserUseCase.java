@@ -2,27 +2,15 @@ package iam.application;
 
 
 import iam.domain.*;
-
+import iam.application.command.RegisterUserCommand;
 import java.util.UUID;
 
 public class RegisterUserUseCase {
 
+    PasswordHasher passwordHasher = new PasswordHasher();
+
     public User execute(RegisterUserCommand command) {
 
-
-
-        if(username == null || username.isEmpty()) {
-            throw new IllegalArgumentException("Username cannot be null or empty");
-        }
-        if(email == null || email.getValue().isEmpty()) {
-            throw new IllegalArgumentException("Email cannot be null or empty");
-        }
-        if(rawPassword == null || rawPassword.getValue().isEmpty()) {
-            throw new IllegalArgumentException("Password cannot be null or empty");
-        }
-        if(role == null) {
-            throw new IllegalArgumentException("Role cannot be null");
-        }
 
 
         // Encrypt the password
