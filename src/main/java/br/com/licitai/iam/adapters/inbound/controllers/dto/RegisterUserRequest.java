@@ -1,4 +1,4 @@
-package br.com.licitai.iam.adapters.inbound.rest.dto;
+package br.com.licitai.iam.adapters.inbound.controllers.dto;
 
 import java.util.UUID;
 

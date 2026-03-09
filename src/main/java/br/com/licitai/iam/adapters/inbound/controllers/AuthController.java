@@ -1,6 +1,6 @@
-package br.com.licitai.iam.adapters.inbound.rest;
+package br.com.licitai.iam.adapters.inbound.controllers;
 
-import br.com.licitai.iam.adapters.inbound.rest.dto.LoginRequest;
+import br.com.licitai.iam.adapters.inbound.controllers.dto.LoginRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

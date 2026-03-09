@@ -1,4 +1,4 @@
-package br.com.licitai.iam.adapters.inbound.security;
+package br.com.licitai.iam.infra.security;
 
 import br.com.licitai.iam.domain.CustomUserDetails;
 import br.com.licitai.iam.domain.Role;

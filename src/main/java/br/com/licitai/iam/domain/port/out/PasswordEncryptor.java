@@ -2,9 +2,6 @@ package br.com.licitai.iam.domain.port.out;
 
 import br.com.licitai.iam.domain.Password;
 import br.com.licitai.iam.domain.RawPassword;
-import org.springframework.context.annotation.Configuration;
-
-
 
 public interface PasswordEncryptor {
 

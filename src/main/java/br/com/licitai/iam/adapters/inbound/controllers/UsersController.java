@@ -1,8 +1,8 @@
-package br.com.licitai.iam.adapters.inbound.rest;
+package br.com.licitai.iam.adapters.inbound.controllers;
 
 
-import br.com.licitai.iam.adapters.inbound.rest.dto.RegisterUserRequest;
-import br.com.licitai.iam.application.RegisterUserUseCase;
+import br.com.licitai.iam.adapters.inbound.controllers.dto.RegisterUserRequest;
+import br.com.licitai.iam.application.usecases.RegisterUserUseCase;
 import br.com.licitai.iam.application.command.RegisterUserCommand;
 import br.com.licitai.iam.domain.*;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package br.com.licitai.iam.adapters.inbound.security;
+package br.com.licitai.iam.infra.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,12 +18,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
-    private final TenantContextFilter tenantContextFilter;
 
-    public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter,
-                          TenantContextFilter tenantContextFilter) {
+    public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
-        this.tenantContextFilter = tenantContextFilter;
     }
 
     @Bean
@@ -43,13 +40,9 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
 
-                // Adicionar filtros na ordem correta:
-                // 1. JWT filter (valida token e popula SecurityContext)
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                // 2. Tenant filter (popula TenantContext baseado no user autenticado)
-                .addFilterAfter(tenantContextFilter, JwtAuthenticationFilter.class);
+                // JWT filter (valida token e popula SecurityContext)
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
 }
-

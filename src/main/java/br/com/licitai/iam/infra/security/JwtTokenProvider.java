@@ -1,4 +1,4 @@
-package br.com.licitai.iam.adapters.inbound.security;
+package br.com.licitai.iam.infra.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
